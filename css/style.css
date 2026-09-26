@@ -174,11 +174,16 @@ main {
   margin-top: 2px;
 }
 
-.who { display: flex; align-items: center; gap: 14px; min-width: 0; }
+.who {
+  display: flex;
+  align-items: flex-start;   /* sebelumnya center */
+  gap: 14px;
+  min-width: 0;
+}
 
 .avatar {
-  width: 56px;
-  height: 56px;
+  width: 144px;      /* sebelumnya 56px */
+  height: 144px;      /* sebelumnya 56px */
   border-radius: 50%;
   flex-shrink: 0;
   border: 2px solid var(--gold-soft);
@@ -198,7 +203,7 @@ main {
 .who-text .hari {
   font-size: 0.86rem;
   color: var(--ink-muted);
-  margin: 0;
+  margin: 2;
 }
 
 .who-text .hari b { color: #C6A15B; }
@@ -216,5 +221,5 @@ footer .masjid { color: #C6A15B;}; font-weight: 600; margin-bottom: 4px; }
 
 @media (max-width: 420px) {
   .entry { grid-template-columns: 64px 1fr; gap: 12px; padding: 14px; }
-  .avatar { width: 48px; height: 48px; }
+  .avatar { width: 64px; height: 64px; }   /* sebelumnya 48px */
 }
