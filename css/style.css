@@ -1,0 +1,220 @@
+:root {
+  --green-deep:   #123128;
+  --green:        #1D4B3E;
+  --green-soft:   #2E6353;
+  --gold:         #C6A15B;
+  --gold-soft:    #E7D3A6;
+  --paper:        #F7F2E7;
+  --card:         #FFFDF8;
+  --ink:          #22221C;
+  --ink-muted:    #63625A;
+  --line:         #E4D9BE;
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #14201B;
+    --card: #1B2B24;
+    --ink: #EFE9DA;
+    --ink-muted: #A9A296;
+    --line: #33443A;
+    --gold-soft: #4A3F27;
+  }
+}
+
+:root[data-theme="dark"] {
+  --paper: #14201B;
+  --card: #1B2B24;
+  --ink: #EFE9DA;
+  --ink-muted: #A9A296;
+  --line: #33443A;
+  --gold-soft: #4A3F27;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Plus Jakarta Sans", -apple-system, sans-serif;
+  line-height: 1.5;
+}
+
+.pattern-band {
+  height: 14px;
+  background-image: repeating-linear-gradient(135deg, var(--gold) 0 6px, transparent 6px 14px);
+  opacity: 0.55;
+}
+
+header.hero {
+  padding: 56px 24px 40px;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at top, var(--gold-soft) 0%, transparent 60%),
+    var(--green-deep);
+  color: #F6EFDD;
+}
+
+.logo {
+  max-width: 110px;
+  height: auto;
+  margin: 0 auto 22px;
+  display: block;
+}
+
+.hero h1 {
+  font-family: "Amiri", serif;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 4vw, 2.35rem);
+  line-height: 1.28;
+  margin: 0 0 10px;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero .sub {
+  font-family: "Amiri", serif;
+  font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+  color: #E7D3A6;
+  margin: 0 0 18px;
+}
+
+.hero .takmir {
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  color: #D8CDB2;
+  margin: 0;
+}
+
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 44px 20px 60px;
+}
+
+.section-title {
+  font-family: "Amiri", serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #E7D3A6;
+  text-align: center;
+  margin: 0 0 6px;
+}
+
+.section-note {
+  text-align: center;
+  color: var(--ink-muted);
+  font-size: 0.92rem;
+  margin: 0 0 40px;
+}
+
+.timeline { position: relative; padding-left: 26px; }
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: var(--line);
+}
+
+.entry {
+  position: relative;
+  display: grid;
+  grid-template-columns: 82px 1fr;
+  gap: 18px;
+  align-items: center;
+  padding: 18px 18px 18px 20px;
+  margin-bottom: 18px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+
+.entry::before {
+  content: "";
+  position: absolute;
+  left: -26px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 3px solid var(--paper);
+}
+
+.date-badge {
+  text-align: center;
+  color: var(--green);
+}
+
+@media (prefers-color-scheme: dark) {
+  .date-badge { color: var(--gold); }
+}
+
+.date-badge .day {
+  font-family: "Amiri", serif;
+  font-weight: 700;
+  font-size: 1.9rem;
+  line-height: 1;
+  display: block;
+}
+
+.date-badge .month {
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--ink-muted);
+  display: block;
+  margin-top: 2px;
+}
+
+.who { display: flex; align-items: center; gap: 14px; min-width: 0; }
+
+.avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 2px solid var(--gold-soft);
+  object-fit: cover;
+}
+
+.who-text { min-width: 0; }
+
+.who-text .name {
+  font-family: "Amiri", serif;
+  font-weight: 700;
+  font-size: 1.08rem;
+  color: var(--ink);
+  margin: 0 0 2px;
+}
+
+.who-text .hari {
+  font-size: 0.86rem;
+  color: var(--ink-muted);
+  margin: 0;
+}
+
+.who-text .hari b { color: #C6A15B; }
+
+footer {
+  text-align: center;
+  padding: 30px 20px 46px;
+  color: var(--ink-muted);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--line);
+  margin: 0 20px;
+}
+
+footer .masjid { color: #C6A15B;}; font-weight: 600; margin-bottom: 4px; }
+
+@media (max-width: 420px) {
+  .entry { grid-template-columns: 64px 1fr; gap: 12px; padding: 14px; }
+  .avatar { width: 48px; height: 48px; }
+}
